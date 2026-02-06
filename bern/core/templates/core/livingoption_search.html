@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LivingOption Search</title>
+</head>
+<body>
+    <h1>Find suitable living options</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Results</h2>
+    <ul>
+        {% for lo in results %}
+            <li>
+                <strong>{{ lo.title }}</strong> (Care level: {{ lo.care_level }})<br>
+                Wheelchair: {{ lo.wheelchair_accessible }}<br>
+                Languages: {{ lo.languages_supported|join:", " }}
+            </li>
+        {% empty %}
+            <li>No matching living options found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

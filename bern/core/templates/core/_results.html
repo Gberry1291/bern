@@ -1,0 +1,32 @@
+{% comment %}Partial: results only{% endcomment %}
+
+{% if results %}
+  <div class="results">
+    {% for r in results %}
+      <div class="card {% if r.tier == 'best' %}best{% endif %}"
+      data-option-id="{{ r.option.id }}"
+      data-rank="{{ r.rank }}">
+        <h3>{{ r.option }}</h3>
+
+        <p>{{ r.option.description }}</p>
+
+        <div class="badges">
+          {% for reason in r.reasons %}
+            <span class="badge {% if 'Matches' in reason or 'Close' in reason %}good{% endif %}">
+              {{ reason }}
+            </span>
+          {% endfor %}
+        </div>
+        {% if request.GET.debug == "1" %}
+          <div class="badges" style="margin-top:8px;">
+            <span class="badge">{{ _("score") }} {{ r.score|floatformat:3 }}</span>
+            <span class="badge">{{ _("semantic") }} {{ r.semantic_score|floatformat:3 }}</span>
+            <span class="badge">{{ _("tier") }} {{ r.tier }}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="hint">{{ _("No results yet. Try a different description or filters.") }}</p>
+{% endif %}

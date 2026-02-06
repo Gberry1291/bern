@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 20:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+msgid "Wheelchair accessible"
+msgstr "Rollstuhlgängig"
+
+msgid "Supports your language"
+msgstr "Unterstützt Ihre Sprache"
+
+msgid "Very strong match"
+msgstr "Sehr gute Übereinstimmung"
+
+msgid "Similar to your description"
+msgstr "Ähnlich zu Ihrer Beschreibung"
+
+msgid "Hearing support available"
+msgstr "Unterstützung bei Hörbeeinträchtigung vorhanden"
+
+msgid "Visual support available"
+msgstr "Unterstützung bei Sehbeeinträchtigung vorhanden"
+
+msgid "Chosen often for similar searches"
+msgstr "Wird häufig bei ähnlichen Suchen gewählt"
+
+msgid "Often skipped for similar searches"
+msgstr "Wird bei ähnlichen Suchen häufig übersprungen"
+
+msgid "Close to your desired support level"
+msgstr "Nahe an Ihrem gewünschten Unterstützungsbedarf"
+
+msgid "Different support level than requested"
+msgstr "Anderer Unterstützungsbedarf als gewünscht"
+
+#: .\core\templates\core\_page_partial.html:4
+msgid "Find a living arrangement"
+msgstr "Finden Sie eine Wohnform"
+
+#: .\core\templates\core\_page_partial.html:5
+msgid "Describe needs and preferences; we’ll rank suitable options."
+msgstr ""
+"Beschreiben Sie Bedürfnisse und Präferenzen – wir ordnen passende Angebote."
+
+#: .\core\templates\core\_page_partial.html:12
+#: .\core\templates\core\_page_partial.html:16
+msgid "Describe your needs"
+msgstr "Beschreiben Sie Ihre Bedürfnisse"
+
+#: .\core\templates\core\_page_partial.html:22
+msgid "Desired support level"
+msgstr "Gewünschter Unterstützungsbedarf"
+
+#: .\core\templates\core\_page_partial.html:24
+msgid "Any"
+msgstr "Beliebig"
+
+#: .\core\templates\core\_page_partial.html:25
+msgid "Low"
+msgstr "Niedrig"
+
+#: .\core\templates\core\_page_partial.html:26
+msgid "Medium"
+msgstr "Mittel"
+
+#: .\core\templates\core\_page_partial.html:27
+msgid "High"
+msgstr "Hoch"
+
+#: .\core\templates\core\_page_partial.html:30
+msgid "Refers to daily assistance and supervision, not medical care."
+msgstr ""
+"Bezieht sich auf Unterstützung im Alltag und Betreuung, nicht auf "
+"medizinische Pflege."
+
+#: .\core\templates\core\_page_partial.html:35
+msgid "Language"
+msgstr "Sprache"
+
+#: .\core\templates\core\_page_partial.html:37
+msgid "All"
+msgstr "Beliebig"
+
+#: .\core\templates\core\_page_partial.html:38
+msgid "German"
+msgstr "Deutsch"
+
+#: .\core\templates\core\_page_partial.html:39
+msgid "French"
+msgstr "französisch"
+
+#: .\core\templates\core\_page_partial.html:40
+msgid "Italian"
+msgstr "Italianisch"
+
+#: .\core\templates\core\_page_partial.html:41
+msgid "English"
+msgstr "English"
+
+#: .\core\templates\core\_page_partial.html:43
+msgid "You may select multiple languages"
+msgstr "Mehrere Sprachen können ausgewählt werden"
+
+#: .\core\templates\core\_page_partial.html:48
+msgid "Search"
+msgstr "Suchen"
+
+#: .\core\templates\core\_page_partial.html:55
+msgid "Wheelchair accessible only"
+msgstr "Nur rollstuhlgängig"
+
+#: .\core\templates\core\_page_partial.html:58
+msgid "Step-free access and wheelchair-usable spaces."
+msgstr "Stufenloser Zugang und für Rollstuhl nutzbare Räume."
+
+#: .\core\templates\core\_results.html:23
+msgid "score"
+msgstr "Punktzahl"
+
+#: .\core\templates\core\_results.html:24
+msgid "semantic"
+msgstr "Semantisch"
+
+#: .\core\templates\core\_results.html:25
+msgid "tier"
+msgstr "Stufe"
+
+#: .\core\templates\core\_results.html:32
+#: .\core\templates\core\_results_container.html:12
+msgid "No results yet. Try a different description or filters."
+msgstr ""
+"Noch keine Ergebnisse. Versuchen Sie eine andere Beschreibung oder andere "
+"Filter."
+
+#: .\core\templates\core\_results_container.html:7
+msgid "Other suitable options"
+msgstr "Weitere geeignete Optionen"
+
+#~ msgid "Assisted living"
+#~ msgstr "Begleitetes Wohnen"
+
+#~ msgid "Independent living with regular on-site support."
+#~ msgstr "Selbstständiges Wohnen mit regelmäßiger Unterstützung vor Ort."
+
+msgid "Independent living"
+msgstr "Selbstständiges Wohnen"
+
+msgid "Living independently with optional or occasional support."
+msgstr "Selbstständiges Wohnen mit optionaler oder gelegentlicher Unterstützung."
+
+msgid "Age range"
+msgstr "Altersbereich"
+
+msgid "Age restrictions"
+msgstr "Altersbeschränkungen"
+
+msgid "Suitable for"
+msgstr "Geeignet für"
+
+msgid "Infants"
+msgstr "Säuglinge"
+
+msgid "Toddlers"
+msgstr "Kleinkinder"
+
+msgid "Children"
+msgstr "Kinder"
+
+msgid "Teenagers"
+msgstr "Jugendliche"
+
+msgid "Adults"
+msgstr "Erwachsene"
+
+msgid "Seniors"
+msgstr "Senior:innen"
+
+msgid "Minimum age"
+msgstr "Mindestalter"
+
+msgid "Maximum age"
+msgstr "Höchstalter"
+
+msgid "Supervision"
+msgstr "Betreuung"
+
+msgid "On-site support"
+msgstr "Unterstützung vor Ort"
+
+msgid "Regular check-ins"
+msgstr "Regelmäßige Check-ins"
+
+msgid "Daytime supervision"
+msgstr "Betreuung tagsüber"
+
+msgid "Evening and night supervision"
+msgstr "Betreuung am Abend und in der Nacht"
+
+msgid "24/7 supervision"
+msgstr "24/7 Betreuung"
+
+msgid "Staff on-site 24/7"
+msgstr "Personal 24/7 vor Ort"
+
+msgid "Not medical care"
+msgstr "Keine medizinische Pflege"
+
+msgid "Supervision refers to guidance and safety support, not medical care."
+msgstr "Betreuung bedeutet Anleitung und Unterstützung zur Sicherheit, nicht medizinische Pflege."

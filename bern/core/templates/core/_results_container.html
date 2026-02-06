@@ -1,0 +1,13 @@
+{% if best_results %}
+  <h2>{{ _("Best matches") }}</h2>
+  {% include "core/_results.html" with results=best_results %}
+{% endif %}
+
+{% if other_results %}
+  <h2>{{ _("Other suitable options") }}</h2>
+  {% include "core/_results.html" with results=other_results %}
+{% endif %}
+
+{% if not best_results and not other_results %}
+  <p class="hint">{{ _("No results yet. Try a different description or filters.") }}</p>
+{% endif %}

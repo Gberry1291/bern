@@ -1,0 +1,23 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search</title>
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+</head>
+<body>
+
+  {% include "core/nav.html" %}
+
+<div id="page-container">
+  {% include "core/_page_partial.html" %}
+</div>
+
+<script src="{% static 'bern/js/language_switcher.js' %}"></script>
+<script src="{% static 'bern/js/click_tracking.js' %}"></script>
+<script src="{% static 'bern/js/textarea_autogrow.js' %}"></script>
+<script src="{% static 'bern/js/language_multiselect.js' %}"></script>
+</body>
+</html>

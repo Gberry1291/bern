@@ -1,0 +1,30 @@
+{% load i18n %}
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="brand">{% trans "Living Options" %}</span>
+  </div>
+
+  <div class="nav-right">
+    <form
+      id="lang-form"
+      class="lang-form"
+      data-set-lang-url="{% url 'set_ui_language' %}"
+    >
+      {% for code, label in LANGUAGES %}
+        {% if code == ui_lang %}
+          <button type="button" class="lang-btn active">
+            {{ label }}
+          </button>
+        {% else %}
+          <button
+            type="button"
+            class="lang-btn"
+            data-lang="{{ code }}"
+          >
+            {{ label }}
+          </button>
+        {% endif %}
+      {% endfor %}
+    </form>
+  </div>
+</nav>

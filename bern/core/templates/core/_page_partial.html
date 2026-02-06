@@ -1,0 +1,97 @@
+{% load i18n %}
+<div class="container">
+  <header>
+    <h1>{{ _("Find a living arrangement") }}</h1>
+    <p class="sub">{{ _("Describe needs and preferences; we’ll rank suitable options.") }}</p>
+  </header>
+
+<div class="search-box">
+<form class="search" method="get">
+  <div class="search-grid">
+    <div class="search-description">
+      <label for="q">{{ _("Describe your needs") }}</label>
+      <textarea
+        id="q"
+        name="q"
+        placeholder="{{ _('Describe your needs') }}"
+        rows="1"
+      >{{ query }}</textarea>
+    </div>
+
+    <div>
+      <label for="care_target">{{ _("Desired support level") }}</label>
+      <select id="care_target" name="care_target" size="4">
+        <option value="">{{ _("Any") }}</option>
+        <option value="low">{{ _("Low") }}</option>
+        <option value="medium">{{ _("Medium") }}</option>
+        <option value="high">{{ _("High") }}</option>
+      </select>
+      <small class="hint">
+        {% trans "Refers to daily assistance and supervision, not medical care." %}
+      </small>
+    </div>
+
+    <div>
+      <label for="language">{{ _("Language") }}</label>
+      <fieldset class="lang-checkboxes">
+        <legend>{{ _("Language") }}</legend>
+      
+        <label>
+          <input type="checkbox" name="language" value="de"
+            {% if language_filter and "de" in language_filter %}checked{% endif %}>
+          {{ _("German") }}
+        </label>
+
+        <label>
+          <input type="checkbox" name="language" value="fr"
+            {% if language_filter and "fr" in language_filter %}checked{% endif %}>
+          {{ _("French") }}
+        </label>
+
+        <label>
+          <input type="checkbox" name="language" value="it"
+            {% if language_filter and "it" in language_filter %}checked{% endif %}>
+          {{ _("Italian") }}
+        </label>
+
+        <label>
+          <input type="checkbox" name="language" value="en"
+            {% if language_filter and "en" in language_filter %}checked{% endif %}>
+          {{ _("English") }}
+        </label>
+
+        <small class="hint">
+          {% trans "Select one or more languages" %}
+        </small>
+      </fieldset>
+      <small class="hint">{{ _("You may select multiple languages") }}</small>
+    </div>
+
+    <div>
+      <label>&nbsp;</label>
+      <button type="submit">{{ _("Search") }}</button>
+    </div>
+  </div>
+
+  <div class="check">
+    <input id="wheelchair" type="checkbox" name="wheelchair" value="true">
+    <label for="wheelchair" style="margin:0;">
+      {% trans "Wheelchair accessible only" %}
+    </label>
+    <small class="hint">
+      {% trans "Step-free access and wheelchair-usable spaces." %}
+    </small>
+  </div>
+</form>
+</div>
+
+  <hr>
+
+  {% if results %}
+
+  <div id="results-container" data-search-event-id="{{ search_event_id|default:'' }}">
+    {% include "core/_results_container.html" %}
+  </div>
+  {% endif %}
+
+</div>
