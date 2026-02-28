@@ -1,0 +1,123 @@
+{% load i18n %}
+{% load static %}
+<main class="page">
+  <header class="hero">
+    <h1>{% trans "How it works" %}</h1>
+    <p class="hero-sub">
+      {% trans "A privacy-first search experience that helps families find disability-appropriate housing faster — using a blend of structured filters and AI understanding." %}
+    </p>
+
+    <ul class="hero-bullets">
+      <li>{% trans "Understands natural language (not just keywords)" %}</li>
+      <li>{% trans "Combines accessibility filters + semantic matching" %}</li>
+      <li>{% trans "Designed with privacy and data minimization from day one" %}</li>
+    </ul>
+
+    <figure class="figure">
+      <img src="{% static 'bern/img/howitworks/pipeline.png' %}"
+           alt="{% trans 'Diagram showing: user query → signal detection → filtering → semantic matching → ranked results.' %}">
+      <figcaption>{% trans "From a single sentence to a ranked shortlist — in milliseconds." %}</figcaption>
+    </figure>
+  </header>
+
+  <section class="card">
+    <h2>{% trans "The problem" %}</h2>
+    <p>
+      {% trans "Finding housing for people with disabilities is rarely a simple checkbox exercise. Families often search while under stress, providers describe similar services in different words, and important accessibility details can be buried in long descriptions. Our goal is to make searching feel human — and still remain precise." %}
+    </p>
+
+    <figure class="figure">
+      <img src="{% static 'bern/img/howitworks/messy-to-clear.png' %}"
+           alt="{% trans 'Different user phrases mapping to the same housing needs.' %}">
+      <figcaption>{% trans "Real-world wording varies — intent should still be understood." %}</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>{% trans "What happens when someone searches" %}</h2>
+
+    <div class="steps">
+
+      <article class="step">
+        <h3>{% trans "1) We detect intent signals" %}</h3>
+        <p>
+          {% trans "Users can write naturally (for example: “My mother needs more care, she forgets a lot.”). The system extracts helpful signals such as age cues (when provided), accessibility needs, care intensity cues, and explicit condition keywords. This guides search without requiring medical forms." %}
+        </p>
+        <figure class="figure">
+          <img src="{% static 'bern/img/howitworks/signals.png' %}"
+               alt="{% trans 'Highlighted words in a query turning into structured signals.' %}">
+          <figcaption>{% trans "We turn text into safe, actionable search hints." %}</figcaption>
+        </figure>
+      </article>
+
+      <article class="step">
+        <h3>{% trans "2) We apply hard filters for safety and accuracy" %}</h3>
+        <p>
+          {% trans "Some requirements aren’t optional. If a user needs wheelchair accessibility or searches for youth housing, results that don’t meet those criteria can be excluded immediately. This prevents irrelevant or unsafe recommendations." %}
+        </p>
+        <ul class="mini">
+          <li>{% trans "Language availability (DE/FR/IT/EN)" %}</li>
+          <li>{% trans "Age suitability (youth vs adult)" %}</li>
+          <li>{% trans "Accessibility flags when selected" %}</li>
+        </ul>
+        <figure class="figure">
+          <img src="{% static 'bern/img/howitworks/filters.png' %}"
+               alt="{% trans 'A funnel showing listings filtered by language, age, and accessibility.' %}">
+          <figcaption>{% trans "Safety-first filtering narrows the field before ranking." %}</figcaption>
+        </figure>
+      </article>
+
+      <article class="step">
+        <h3>{% trans "3) AI semantic matching finds meaning beyond keywords" %}</h3>
+        <p>
+          {% trans "After filtering, the system uses semantic embeddings to compare the meaning of the query with listing descriptions. This helps connect real-world phrasing to relevant housing even when terminology differs." %}
+        </p>
+        <figure class="figure">
+          <img src="{% static 'bern/img/howitworks/semantic-map.png' %}"
+               alt="{% trans 'Dots representing listings clustered by meaning; a query point near the best matches.' %}">
+          <figcaption>{% trans "Meaning-based matching, not brittle keyword search." %}</figcaption>
+        </figure>
+      </article>
+
+      <article class="step">
+        <h3>{% trans "4) Smart re-ranking keeps results relevant and explainable" %}</h3>
+        <p>
+          {% trans "Results are re-ranked using light, explainable scoring: boosts for clear matches, gentle demotions for unrelated specialist services, and optional tuning for support level fit. Each result can show simple reasons so users understand why it appears." %}
+        </p>
+        <figure class="figure">
+          <img src="{% static 'bern/img/howitworks/reasons-card.png' %}"
+               alt="{% trans 'Search result card showing title, description, and short “reasons” tags.' %}">
+          <figcaption>{% trans "Transparent matching — users see why a result appears." %}</figcaption>
+        </figure>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>{% trans "Privacy by design" %}</h2>
+    <p>
+      {% trans "We minimize data collection and avoid building personal profiles. Searches can be processed without storing sensitive personal details. We focus on data minimization, separation of concerns, and transparent matching — built with GDPR expectations in mind." %}
+    </p>
+
+    <figure class="figure">
+      <img src="{% static 'bern/img/howitworks/privacy.png' %}"
+           alt="{% trans 'Shield icon with labels: data minimization, separation, transparency.' %}">
+      <figcaption>{% trans "A search tool that respects sensitive contexts." %}</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>{% trans "Why this approach scales" %}</h2>
+    <ul class="mini">
+      <li>{% trans "Multilingual foundation: DE/FR/IT/EN from the start" %}</li>
+      <li>{% trans "Hybrid model: precise filtering + flexible understanding" %}</li>
+      <li>{% trans "Extensible data model: easy to add new support types and regions" %}</li>
+      <li>{% trans "Measurable improvements: ranking can be tuned using real search feedback" %}</li>
+    </ul>
+    <p class="closing">
+      {% trans "The result is a system that can grow from a local prototype into a broader platform — while keeping trust, safety, and clarity at the center." %}
+    </p>
+  </section>
+
+</main>

@@ -1,0 +1,47 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Request access" %} – {{ provider.name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <h1>{% trans "Request access" %}</h1>
+    <p class="sub">
+      {% trans "We’ll review your request and help you update this listing:" %}
+      <strong>{{ provider.name }}</strong>
+    </p>
+
+    <form method="post" class="search-box">
+      {% csrf_token %}
+      <div class="search-grid">
+        <div class="search-description">
+          <label for="email">{% trans "Work email" %}</label>
+          {% if error %}
+            <p class="hint" style="color:#b91c1c; font-weight:600;">
+              {{ error }}
+            </p>
+          {% endif %}
+
+          <input id="email" name="email" type="email" required placeholder="{% trans 'name@organization.org' %}">
+          <small class="hint">{% trans "Use an email associated with the organization." %}</small>
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button type="submit">{% trans "Submit request" %}</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}?v=4"></script>
+</body>
+</html>

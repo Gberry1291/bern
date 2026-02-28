@@ -1,0 +1,83 @@
+/* Tabs styled like your navbar language buttons */
+.lang-block{
+  margin-top: .25rem;
+}
+
+.lang-tabs{
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: .75rem;
+}
+
+.lang-tab{
+  border: 1px solid rgba(0,0,0,.18);
+  background: #fff;
+  padding: .55rem .85rem;
+  border-radius: .85rem;
+  font-size: 1rem;
+  font-weight: 800;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.lang-tab.active{
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  cursor: default;
+}
+
+.lang-tab:focus-visible{
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.lang-checkbox-row{
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-bottom: .5rem;
+}
+
+.lang-check{
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 650;
+}
+
+/* Make disabled checkboxes look normal but non-interactive */
+.lang-check input[disabled]{
+  opacity: 1;
+  cursor: default;
+}
+
+/* Stacked panes */
+.lang-panes{
+  position: relative;
+}
+
+.lang-pane{
+  display: none;
+}
+
+.lang-pane.show{
+  display: block;
+}
+
+/* Make all 3 textareas look identical */
+.lang-pane textarea{
+  width: 100%;
+  border: 2px solid rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  border-radius: .85rem;
+  padding: 1rem;
+  font-size: 1rem;
+  min-height: 9rem;
+}
+
+.lang-pane textarea:focus{
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}

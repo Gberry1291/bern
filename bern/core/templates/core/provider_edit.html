@@ -1,0 +1,54 @@
+{% load i18n %}{% load static %}
+<!doctype html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+<title>{% trans "Edit listing" %}</title>
+</head><body>
+{% include "core/nav.html" %}
+<main class="container">
+  <h1>{% trans "Edit listing" %}: {{ provider.name }}</h1>
+  <p class="sub">{% trans "Changes will be reviewed before appearing publicly." %}</p>
+
+  <div class="manage-actions">
+    <a class="btn btn-primary" href="{% url 'livingoption_create' %}">
+      {% trans "Add a living option" %}
+    </a>
+  </div>
+
+  {% if options %}
+    <h2 style="margin-top:1rem;">{% trans "Living options" %}</h2>
+    <div class="results">
+      {% for opt in options %}
+        <div class="card">
+          <h3>{{ opt }}</h3>
+          <p class="hint">{{ opt.description|truncatechars:160 }}</p>
+          <div class="card-actions">
+            <a class="btn" href="{% url 'livingoption_edit' opt.id %}">{% trans "Edit" %}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+
+  <form method="post" class="search-box">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="search-grid">
+      {% for field in form %}
+        <div class="{% if field.name == 'short_description' %}search-description{% endif %}">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.help_text %}<small class="hint">{{ field.help_text }}</small>{% endif %}
+          {{ field.errors }}
+        </div>
+      {% endfor %}
+      <div>
+        <label>&nbsp;</label>
+        <button type="submit">{% trans "Submit changes" %}</button>
+      </div>
+    </div>
+  </form>
+</main>
+</body></html>

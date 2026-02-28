@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-02 20:59+0100\n"
+"POT-Creation-Date: 2026-02-27 20:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,130 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Description (German)"
+msgstr "Beschreibung (Deutsch)"
 
-msgid "Wheelchair accessible"
-msgstr "Rollstuhlgängig"
+msgid "Description (French)"
+msgstr "Beschreibung (Französisch)"
 
-msgid "Supports your language"
-msgstr "Unterstützt Ihre Sprache"
+msgid "Description (Italian)"
+msgstr "Beschreibung (Italienisch)"
 
-msgid "Very strong match"
-msgstr "Sehr gute Übereinstimmung"
+msgid "Description (English)"
+msgstr "Beschreibung (Englisch)"
 
-msgid "Similar to your description"
-msgstr "Ähnlich zu Ihrer Beschreibung"
+#: .\core\forms.py:98
+msgid "e.g. Supported studio apartment"
+msgstr "z.B. Betreutes Studio-Apartment"
 
-msgid "Hearing support available"
-msgstr "Unterstützung bei Hörbeeinträchtigung vorhanden"
+msgid "Please provide a description in at least one language."
+msgstr "Bitte geben Sie eine Beschreibung in mindestens einer Sprache an."
 
+msgid "Matches schizophrenia support"
+msgstr "Passend zu Unterstützung bei Schizophrenie"
+
+msgid "Matches epilepsy support"
+msgstr "Passend zu Unterstützung bei Epilepsie"
+
+msgid "Matches autism support"
+msgstr "Passend zu Unterstützung bei Autismus"
+
+msgid "Matches dementia support"
+msgstr "Passend zu Unterstützung bei Demenz"
+
+msgid "Matches paralysis support"
+msgstr "Passend zu Unterstützung bei Lähmung"
+
+msgid "Help with daily living"
+msgstr "Unterstützung im Alltag"
+
+msgid "Practical household support"
+msgstr "Praktische Unterstützung im Haushalt"
+
+#: .\core\search.py:201
+#, fuzzy
+#| msgid "On-site support"
+msgid "Memory/cognitive support"
+msgstr "Unterstützung bei Gedächtnis/Kognition"
+
+#: .\core\search.py:216
 msgid "Visual support available"
 msgstr "Unterstützung bei Sehbeeinträchtigung vorhanden"
 
+msgid "Vision-focused listing"
+msgstr "Fokus auf Sehunterstützung"
+
+msgid "Orientation/tactile aids"
+msgstr "Orientierungs- und taktile Hilfen"
+
+#: .\core\search.py:235
+msgid "Hearing support available"
+msgstr "Unterstützung bei Hörbeeinträchtigung vorhanden"
+
+msgid "Guide-dog friendly"
+msgstr "Assistenzhund/Führhund willkommen"
+
+#: .\core\search.py:277
+#, fuzzy
+#| msgid "Independent living"
+msgid "Independent living focus"
+msgstr "Selbstständiges Wohnen"
+
+#: .\core\search.py:284
+msgid "Coaching for daily living"
+msgstr "Coaching für den Alltag"
+
+#: .\core\search.py:314
+#, fuzzy
+#| msgid "24/7 supervision"
+msgid "24/7 support"
+msgstr "24/7 Betreuung"
+
+#: .\core\search.py:329
+msgid "Not for your age group"
+msgstr "Nicht für Ihre Altersgruppe"
+
+#: .\core\search.py:450 .\core\templates\core\livingoption_create.html:117
+#: .\core\templates\core\livingoption_edit.html:113
+#: .\core\templates\core\provider_detail.html:60
+#: .\core\templates\core\provider_register.html:81
+#: .\core\templates\core\saved.html:34
+msgid "Wheelchair accessible"
+msgstr "Rollstuhlgängig"
+
+#: .\core\search.py:454
+msgid "Supports your language"
+msgstr "Unterstützt Ihre Sprache"
+
+#: .\core\search.py:460
+msgid "Matches your age range"
+msgstr "Passt zu Ihrer Altersangabe"
+
+#: .\core\search.py:467
+msgid "Very strong match"
+msgstr "Sehr gute Übereinstimmung"
+
+#: .\core\search.py:470
+msgid "Similar to your description"
+msgstr "Ähnlich zu Ihrer Beschreibung"
+
+#: .\core\search.py:507 .\core\search.py:510
+msgid "Title matches"
+msgstr "Titel passt"
+
+#: .\core\search.py:545
 msgid "Chosen often for similar searches"
 msgstr "Wird häufig bei ähnlichen Suchen gewählt"
 
+#: .\core\search.py:550
 msgid "Often skipped for similar searches"
 msgstr "Wird bei ähnlichen Suchen häufig übersprungen"
 
+#: .\core\search.py:577
 msgid "Close to your desired support level"
 msgstr "Nahe an Ihrem gewünschten Unterstützungsbedarf"
 
+#: .\core\search.py:579
 msgid "Different support level than requested"
 msgstr "Anderer Unterstützungsbedarf als gewünscht"
 
@@ -53,104 +149,585 @@ msgstr "Anderer Unterstützungsbedarf als gewünscht"
 msgid "Find a living arrangement"
 msgstr "Finden Sie eine Wohnform"
 
-#: .\core\templates\core\_page_partial.html:5
-msgid "Describe needs and preferences; we’ll rank suitable options."
-msgstr ""
-"Beschreiben Sie Bedürfnisse und Präferenzen – wir ordnen passende Angebote."
+#: .\core\templates\core\_page_partial.html:6
+msgid "This tool can be used by individuals, family members, or professionals."
+msgstr "Dieses Tool kann von Betroffenen, Angehörigen oder Fachpersonen genutzt werden."
 
-#: .\core\templates\core\_page_partial.html:12
-#: .\core\templates\core\_page_partial.html:16
+#: .\core\templates\core\_page_partial.html:8
+msgid "Describe needs and preferences; we’ll rank suitable options."
+msgstr "Beschreiben Sie Bedürfnisse und Präferenzen – wir ordnen passende Angebote."
+
+#: .\core\templates\core\_page_partial.html:15
+#, fuzzy
+#| msgid "Describe your needs"
+msgid "Describe your needs in your own words"
+msgstr "Beschreiben Sie Ihre Bedürfnisse"
+
+#: .\core\templates\core\_page_partial.html:17
+msgid "Example searches:"
+msgstr "Beispielsuchen:"
+
+#: .\core\templates\core\_page_partial.html:20
+msgid "Wheelchair-accessible living near Bern, German-speaking staff"
+msgstr "Rollstuhlgängiges Wohnen in der Nähe von Bern, deutschsprachiges Personal"
+
+msgid "Quiet assisted living with a memory-friendly environment"
+msgstr "Ruhiges begleitetes Wohnen mit gedächtnisfreundlichem Umfeld"
+
+msgid "High support needs, multilingual staff, budget under CHF 6’000"
+msgstr "Hoher Unterstützungsbedarf, mehrsprachiges Personal, Budget unter CHF 6’000"
+
+#: .\core\templates\core\_page_partial.html:34
 msgid "Describe your needs"
 msgstr "Beschreiben Sie Ihre Bedürfnisse"
 
-#: .\core\templates\core\_page_partial.html:22
+#: .\core\templates\core\_page_partial.html:38
+msgid "Include accessibility needs, preferred language, location, or support level."
+msgstr "Geben Sie z.B. Barrierefreiheit, bevorzugte Sprache, Ort oder Unterstützungsbedarf an."
+
+#: .\core\templates\core\_page_partial.html:43
 msgid "Desired support level"
 msgstr "Gewünschter Unterstützungsbedarf"
 
-#: .\core\templates\core\_page_partial.html:24
+#: .\core\templates\core\_page_partial.html:45
 msgid "Any"
 msgstr "Beliebig"
 
-#: .\core\templates\core\_page_partial.html:25
+#: .\core\templates\core\_page_partial.html:46
+#: .\core\templates\core\provider_register.html:73
 msgid "Low"
 msgstr "Niedrig"
 
-#: .\core\templates\core\_page_partial.html:26
+#: .\core\templates\core\_page_partial.html:47
+#: .\core\templates\core\provider_register.html:74
 msgid "Medium"
 msgstr "Mittel"
 
-#: .\core\templates\core\_page_partial.html:27
+#: .\core\templates\core\_page_partial.html:48
+#: .\core\templates\core\provider_register.html:75
 msgid "High"
 msgstr "Hoch"
 
-#: .\core\templates\core\_page_partial.html:30
+#: .\core\templates\core\_page_partial.html:51
 msgid "Refers to daily assistance and supervision, not medical care."
 msgstr ""
 "Bezieht sich auf Unterstützung im Alltag und Betreuung, nicht auf "
 "medizinische Pflege."
 
-#: .\core\templates\core\_page_partial.html:35
+#: .\core\templates\core\_page_partial.html:57
 msgid "Language"
 msgstr "Sprache"
 
-#: .\core\templates\core\_page_partial.html:37
-msgid "All"
-msgstr "Beliebig"
-
-#: .\core\templates\core\_page_partial.html:38
+#: .\core\templates\core\_page_partial.html:62
 msgid "German"
 msgstr "Deutsch"
 
-#: .\core\templates\core\_page_partial.html:39
+#: .\core\templates\core\_page_partial.html:68
 msgid "French"
 msgstr "französisch"
 
-#: .\core\templates\core\_page_partial.html:40
+#: .\core\templates\core\_page_partial.html:74
 msgid "Italian"
 msgstr "Italianisch"
 
-#: .\core\templates\core\_page_partial.html:41
+#: .\core\templates\core\_page_partial.html:80
 msgid "English"
 msgstr "English"
 
-#: .\core\templates\core\_page_partial.html:43
-msgid "You may select multiple languages"
-msgstr "Mehrere Sprachen können ausgewählt werden"
+#: .\core\templates\core\_page_partial.html:84
+#, fuzzy
+#| msgid "Supports your language"
+msgid "Select one or more languages"
+msgstr "Unterstützt Ihre Sprache"
 
-#: .\core\templates\core\_page_partial.html:48
-msgid "Search"
-msgstr "Suchen"
-
-#: .\core\templates\core\_page_partial.html:55
+#: .\core\templates\core\_page_partial.html:92
 msgid "Wheelchair accessible only"
 msgstr "Nur rollstuhlgängig"
 
-#: .\core\templates\core\_page_partial.html:58
+#: .\core\templates\core\_page_partial.html:95
+#: .\core\templates\core\provider_register.html:83
 msgid "Step-free access and wheelchair-usable spaces."
 msgstr "Stufenloser Zugang und für Rollstuhl nutzbare Räume."
 
-#: .\core\templates\core\_results.html:23
+msgid "Age (optional)"
+msgstr "Alter (optional)"
+
+msgid "Used to filter programs with age ranges (e.g., 18–25, 50+)."
+msgstr "Wird genutzt, um Angebote mit Altersbereichen zu filtern (z.B. 18–25, 50+)."
+
+msgid "Show matching options"
+msgstr "Passende Angebote anzeigen"
+
+msgid "No account required"
+msgstr "Kein Konto erforderlich"
+
+msgid "Free and independent"
+msgstr "Kostenlos und unabhängig"
+
+msgid "Does not replace medical or social-care advice"
+msgstr "Ersetzt keine medizinische oder sozialarbeiterische Beratung"
+
+msgid "Why this matches:"
+msgstr "Warum das passt:"
+
+#: .\core\templates\core\_results.html:29
 msgid "score"
 msgstr "Punktzahl"
 
-#: .\core\templates\core\_results.html:24
+#: .\core\templates\core\_results.html:30
 msgid "semantic"
 msgstr "Semantisch"
 
-#: .\core\templates\core\_results.html:25
+#: .\core\templates\core\_results.html:31
 msgid "tier"
 msgstr "Stufe"
 
-#: .\core\templates\core\_results.html:32
+msgid "Save"
+msgstr "Speichern"
+
+msgid "View details"
+msgstr "Details ansehen"
+
+#: .\core\templates\core\_results.html:54
 #: .\core\templates\core\_results_container.html:12
 msgid "No results yet. Try a different description or filters."
 msgstr ""
 "Noch keine Ergebnisse. Versuchen Sie eine andere Beschreibung oder andere "
 "Filter."
 
+#: .\core\templates\core\_results_container.html:2
+#, fuzzy
+#| msgid "Very strong match"
+msgid "Best matches"
+msgstr "Sehr gute Übereinstimmung"
+
 #: .\core\templates\core\_results_container.html:7
 msgid "Other suitable options"
 msgstr "Weitere geeignete Optionen"
+
+#: .\core\templates\core\how_it_works.html:6
+#: .\core\templates\core\how_it_works.html:19 .\core\templates\core\nav.html:49
+msgid "How it works"
+msgstr "So funktioniert es"
+
+msgid "A privacy-first search experience that helps families find disability-appropriate housing faster — using a blend of structured filters and AI understanding."
+msgstr "Eine datenschutzorientierte Suche, die Familien hilft, schneller passende Wohnangebote für Menschen mit Behinderungen zu finden – durch die Kombination strukturierter Filter mit KI-gestütztem Sprachverständnis."
+
+msgid "Understands natural language (not just keywords)"
+msgstr "Versteht natürliche Sprache (nicht nur Stichworte)"
+
+msgid "Combines accessibility filters + semantic matching"
+msgstr "Kombiniert Barrierefreiheits-Filter mit semantischem Matching"
+
+msgid "Designed with privacy and data minimization from day one"
+msgstr "Von Anfang an mit Datenschutz und Datenminimierung entwickelt"
+
+msgid "Diagram showing: user query → signal detection → filtering → semantic matching → ranked results."
+msgstr "Diagramm: Suchanfrage → Signalerkennung → Filterung → semantisches Matching → sortierte Ergebnisse."
+
+msgid "From a single sentence to a ranked shortlist — in milliseconds."
+msgstr "Von einem Satz zur sortierten Auswahlliste – in Millisekunden."
+
+msgid "The problem"
+msgstr "Die Herausforderung"
+
+msgid "Finding housing for people with disabilities is rarely a simple checkbox exercise. Families often search while under stress, providers describe similar services in different words, and important accessibility details can be buried in long descriptions. Our goal is to make searching feel human — and still remain precise."
+msgstr "Wohnangebote für Menschen mit Behinderungen zu finden, ist selten eine einfache Checkliste. Angehörige suchen oft unter Druck, Anbieter beschreiben ähnliche Leistungen mit unterschiedlichen Begriffen, und wichtige Hinweise zur Barrierefreiheit gehen in langen Texten unter. Unser Ziel: eine Suche, die sich menschlich anfühlt – und dennoch präzise bleibt."
+
+msgid "Different user phrases mapping to the same housing needs."
+msgstr "Verschiedene Formulierungen führen zum gleichen Bedarf."
+
+msgid "Real-world wording varies — intent should still be understood."
+msgstr "Im Alltag wird unterschiedlich formuliert – die Absicht soll dennoch verstanden werden."
+
+msgid "What happens when someone searches"
+msgstr "Was bei einer Suche passiert"
+
+msgid "1) We detect intent signals"
+msgstr "1) Wir erkennen Signale zur Suchabsicht"
+
+msgid "Users can write naturally (for example: “My mother needs more care, she forgets a lot.”). The system extracts helpful signals such as age cues (when provided), accessibility needs, care intensity cues, and explicit condition keywords. This guides search without requiring medical forms."
+msgstr "Nutzerinnen und Nutzer können frei formulieren (z.B.: „Meine Mutter braucht mehr Betreuung, sie vergisst viel.“). Das System erkennt hilfreiche Signale wie Altersangaben (falls vorhanden), Barrierefreiheitsbedürfnisse, Hinweise zur Betreuungsintensität sowie ausdrücklich genannte Stichworte. So wird die Suche unterstützt – ohne medizinische Formulare."
+
+msgid "Highlighted words in a query turning into structured signals."
+msgstr "Hervorgehobene Wörter werden in strukturierte Signale übersetzt."
+
+msgid "We turn text into safe, actionable search hints."
+msgstr "Wir machen aus Text sichere, umsetzbare Suchhinweise."
+
+msgid "2) We apply hard filters for safety and accuracy"
+msgstr "2) Wir nutzen harte Filter für Sicherheit und Genauigkeit"
+
+msgid "Some requirements aren’t optional. If a user needs wheelchair accessibility or searches for youth housing, results that don’t meet those criteria can be excluded immediately. This prevents irrelevant or unsafe recommendations."
+msgstr "Manche Anforderungen sind nicht verhandelbar. Wenn Rollstuhlgängigkeit nötig ist oder nach Jugendangeboten gesucht wird, können Ergebnisse, die diese Kriterien nicht erfüllen, sofort ausgeschlossen werden. Das verhindert unpassende oder potenziell unsichere Vorschläge."
+
+msgid "Language availability (DE/FR/IT/EN)"
+msgstr "Sprachverfügbarkeit (DE/FR/IT/EN)"
+
+msgid "Age suitability (youth vs adult)"
+msgstr "Altersgeeignet (Jugend vs. Erwachsene)"
+
+msgid "Accessibility flags when selected"
+msgstr "Barrierefreiheits-Merkmale (wenn ausgewählt)"
+
+msgid "A funnel showing listings filtered by language, age, and accessibility."
+msgstr "Trichterdiagramm: Angebote werden nach Sprache, Alter und Barrierefreiheit gefiltert."
+
+msgid "Safety-first filtering narrows the field before ranking."
+msgstr "Sicherheitsorientierte Filterung reduziert die Auswahl vor dem Ranking."
+
+msgid "3) AI semantic matching finds meaning beyond keywords"
+msgstr "3) Semantisches Matching findet Bedeutung jenseits von Stichworten"
+
+msgid "After filtering, the system uses semantic embeddings to compare the meaning of the query with listing descriptions. This helps connect real-world phrasing to relevant housing even when terminology differs."
+msgstr "Nach der Filterung vergleicht das System mittels semantischer Embeddings die Bedeutung der Anfrage mit den Beschreibungen. So werden alltagsnahe Formulierungen mit passenden Angeboten verknüpft – auch wenn die Begriffe unterschiedlich sind."
+
+msgid "Dots representing listings clustered by meaning; a query point near the best matches."
+msgstr "Punkte (Angebote) sind nach Bedeutung gruppiert; die Anfrage liegt nahe bei den besten Treffern."
+
+
+msgid "Meaning-based matching, not brittle keyword search."
+msgstr "Bedeutungsbasiertes Matching statt anfälliger Stichwortsuche."
+
+msgid "4) Smart re-ranking keeps results relevant and explainable"
+msgstr "4) Intelligentes Re-Ranking hält Ergebnisse relevant und nachvollziehbar"
+
+msgid "Results are re-ranked using light, explainable scoring: boosts for clear matches, gentle demotions for unrelated specialist services, and optional tuning for support level fit. Each result can show simple reasons so users understand why it appears."
+msgstr "Die Ergebnisse werden mit einer leichten, nachvollziehbaren Bewertung neu sortiert: Aufwertungen bei klaren Treffern, sanfte Abwertungen bei themenfremden Spezialangeboten sowie optional eine Anpassung an den gewünschten Unterstützungsbedarf. Zu jedem Treffer können kurze Gründe angezeigt werden, damit verständlich ist, warum er erscheint."
+
+msgid "Search result card showing title, description, and short “reasons” tags."
+msgstr "Ergebniskarte mit Titel, Beschreibung und kurzen „Warum passt das?“-Hinweisen."
+
+msgid "Transparent matching — users see why a result appears."
+msgstr "Transparente Zuordnung – man sieht, warum ein Ergebnis erscheint."
+
+msgid "Privacy by design"
+msgstr "Datenschutz von Anfang an"
+
+msgid "We minimize data collection and avoid building personal profiles. Searches can be processed without storing sensitive personal details. We focus on data minimization, separation of concerns, and transparent matching — built with GDPR expectations in mind."
+msgstr "Wir sammeln so wenig Daten wie möglich und erstellen keine persönlichen Profile. Suchen können verarbeitet werden, ohne sensible persönliche Angaben zu speichern. Im Fokus stehen Datenminimierung, klare Trennung von Komponenten und transparente Zuordnung – mit Blick auf die Anforderungen der DSGVO."
+
+msgid "Shield icon with labels: data minimization, separation, transparency."
+msgstr "Schildsymbol mit Labels: Datenminimierung, Trennung, Transparenz."
+
+msgid "A search tool that respects sensitive contexts."
+msgstr "Ein Suchtool, das sensible Situationen respektiert."
+
+msgid "Why this approach scales"
+msgstr "Warum dieser Ansatz skalierbar ist"
+
+msgid "Multilingual foundation: DE/FR/IT/EN from the start"
+msgstr "Mehrsprachige Grundlage: DE/FR/IT/EN von Beginn an"
+
+msgid "Hybrid model: precise filtering + flexible understanding"
+msgstr "Hybrides Modell: präzise Filter + flexibles Sprachverständnis"
+
+msgid "Extensible data model: easy to add new support types and regions"
+msgstr "Erweiterbares Datenmodell: neue Unterstützungsarten und Regionen lassen sich einfach ergänzen"
+
+msgid "Measurable improvements: ranking can be tuned using real search feedback"
+msgstr "Messbare Verbesserungen: das Ranking kann mit echtem Such-Feedback feinjustiert werden"
+
+msgid "The result is a system that can grow from a local prototype into a broader platform — while keeping trust, safety, and clarity at the center."
+msgstr "Das Ergebnis ist ein System, das von einem lokalen Prototyp zu einer breiteren Plattform wachsen kann – mit Vertrauen, Sicherheit und Verständlichkeit im Zentrum."
+
+msgid "Add living option"
+msgstr "Wohnangebot hinzufügen"
+
+msgid "Add a living option"
+msgstr "Wohnangebot hinzufügen"
+
+msgid "Provider:"
+msgstr "Anbieter:"
+
+msgid "This title will be used for each language you provide below."
+msgstr "Dieser Titel wird für jede Sprache verwendet, die Sie unten ausfüllen."
+
+msgid "Description language"
+msgstr "Sprache der Beschreibung"
+
+msgid "German included"
+msgstr "Deutsch enthalten"
+
+msgid "French included"
+msgstr "Französisch enthalten"
+
+msgid "Italian included"
+msgstr "Italienisch enthalten"
+
+msgid "English included"
+msgstr "Englisch enthalten"
+
+msgid "A language is included only if its description is filled in."
+msgstr "Eine Sprache wird nur berücksichtigt, wenn die entsprechende Beschreibung ausgefüllt ist."
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Write plain, specific descriptions. Avoid medical claims."
+msgstr "Schreiben Sie klar und konkret. Vermeiden Sie medizinische Aussagen."
+
+msgid "1 = minimal, 5 = 24/7 care"
+msgstr "1 = minimal, 5 = Betreuung rund um die Uhr"
+
+#: .\core\templates\core\livingoption_create.html:118
+#: .\core\templates\core\livingoption_edit.html:114
+#: .\core\templates\core\saved.html:37
+#, fuzzy
+#| msgid "Hearing support available"
+msgid "Hearing support"
+msgstr "Unterstützung bei Hörbeeinträchtigung vorhanden"
+
+#: .\core\templates\core\livingoption_create.html:119
+#: .\core\templates\core\livingoption_edit.html:115
+#: .\core\templates\core\saved.html:40
+#, fuzzy
+#| msgid "Visual support available"
+msgid "Visual support"
+msgstr "Unterstützung bei Sehbeeinträchtigung vorhanden"
+
+msgid "Create option"
+msgstr "Angebot erstellen"
+
+msgid "Delete living option"
+msgstr "Wohnangebot löschen"
+
+msgid "Back to edit"
+msgstr "Zurück zum Bearbeiten"
+
+msgid "Are you sure you want to delete this living option?"
+msgstr "Möchten Sie dieses Wohnangebot wirklich löschen?"
+
+msgid "Yes, delete"
+msgstr "Ja, löschen"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "This action cannot be undone."
+msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
+
+msgid "Edit living option"
+msgstr "Wohnangebot bearbeiten"
+
+msgid "Back to provider dashboard"
+msgstr "Zurück zum Anbieter-Dashboard"
+
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+msgid "Delete option"
+msgstr "Angebot löschen"
+
+msgid "Open menu"
+msgstr "Menü öffnen"
+
+msgid "Living Options"
+msgstr "Wohnangebote"
+
+msgid "About"
+msgstr "Über"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+#: .\core\templates\core\nav.html:52
+#: .\core\templates\core\provider_detail.html:153
+#: .\core\templates\core\saved.html:52
+msgid "Saved"
+msgstr "Gespeichert"
+
+msgid "For providers"
+msgstr "Für Anbieter"
+
+msgid "Add your organization"
+msgstr "Organisation hinzufügen"
+
+msgid "Manage a listing"
+msgstr "Eintrag verwalten"
+
+msgid "This listing does not have a contact email on file. Please contact us directly."
+msgstr "Für diesen Eintrag ist keine Kontakt-E-Mail hinterlegt. Bitte kontaktieren Sie uns direkt."
+
+msgid "Please use the email address associated with this organization."
+msgstr "Bitte verwenden Sie die E-Mail-Adresse, die mit dieser Organisation verbunden ist."
+
+msgid "Back to search"
+msgstr "Zurück zur Suche"
+
+msgid "Reviewed"
+msgstr "Geprüft"
+
+msgid "Not reviewed yet"
+msgstr "Noch nicht geprüft"
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+msgid "Canton"
+msgstr "Kanton"
+
+msgid "At a glance"
+msgstr "Auf einen Blick"
+
+msgid "Support level"
+msgstr "Unterstützungsbedarf"
+
+msgid "Not specified"
+msgstr "Nicht angegeben"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Languages"
+msgstr "Sprachen"
+
+msgid "About this provider"
+msgstr "Über diesen Anbieter"
+
+msgid "No description provided yet."
+msgstr "Noch keine Beschreibung vorhanden."
+
+msgid "Tip: When contacting a provider, you can ask about availability, pricing, and whether they can support specific needs."
+msgstr "Tipp: Beim Kontakt mit einem Anbieter können Sie nach Verfügbarkeit, Kosten und der Unterstützung spezifischer Bedürfnisse fragen."
+
+msgid "Call"
+msgstr "Anrufen"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "No contact details available yet."
+msgstr "Noch keine Kontaktdaten verfügbar."
+
+msgid "Save to compare"
+msgstr "Zum Vergleichen speichern"
+
+msgid "Contacting a provider does not commit you to anything."
+msgstr "Eine Kontaktaufnahme verpflichtet Sie zu nichts."
+
+msgid "Edit listing"
+msgstr "Eintrag bearbeiten"
+
+msgid "Changes will be reviewed before appearing publicly."
+msgstr "Änderungen werden geprüft, bevor sie öffentlich angezeigt werden."
+
+msgid "Living options"
+msgstr "Wohnangebote"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Submit changes"
+msgstr "Änderungen einreichen"
+
+msgid "Submitted"
+msgstr "Eingereicht"
+
+msgid "Thanks — your updates were submitted."
+msgstr "Danke — Ihre Änderungen wurden eingereicht."
+
+msgid "We’ll review changes before they appear publicly."
+msgstr "Wir prüfen die Änderungen, bevor sie öffentlich erscheinen."
+
+msgid "Link expired"
+msgstr "Link abgelaufen"
+
+msgid "This link is no longer valid."
+msgstr "Dieser Link ist nicht mehr gültig."
+
+msgid "Please request a new access link from the Manage a listing page."
+msgstr "Bitte fordern Sie auf der Seite „Eintrag verwalten“ einen neuen Zugangslink an."
+
+msgid "Request access"
+msgstr "Zugriff anfordern"
+
+msgid "We’ll review your request and help you update this listing:"
+msgstr "Wir prüfen Ihre Anfrage und helfen Ihnen, diesen Eintrag zu aktualisieren:"
+
+msgid "Work email"
+msgstr "Geschäftliche E-Mail"
+
+msgid "name@organization.org"
+msgstr "name@organisation.org"
+
+msgid "Use an email associated with the organization."
+msgstr "Verwenden Sie eine E-Mail-Adresse, die mit der Organisation verbunden ist."
+
+msgid "Submit request"
+msgstr "Anfrage senden"
+
+msgid "Search for your organization, then request access to update details."
+msgstr "Suchen Sie Ihre Organisation und fordern Sie danach Zugriff an, um Details zu aktualisieren."
+
+msgid "Organization name"
+msgstr "Name der Organisation"
+
+msgid "e.g. Sonnenhof"
+msgstr "z.B. Sonnenhof"
+
+msgid "Canton (optional)"
+msgstr "Kanton (optional)"
+
+msgid "e.g. Bern"
+msgstr "z.B. Bern"
+
+msgid "Helps narrow results if names are similar."
+msgstr "Hilft, Ergebnisse einzugrenzen, wenn Namen ähnlich sind."
+
+msgid "Select your organization"
+msgstr "Organisation auswählen"
+
+msgid "No matching organizations found."
+msgstr "Keine passenden Organisationen gefunden."
+
+msgid "Add your organization instead."
+msgstr "Fügen Sie stattdessen Ihre Organisation hinzu."
+
+msgid "Submit your details. We review new listings before they appear publicly."
+msgstr "Reichen Sie Ihre Angaben ein. Neue Einträge werden geprüft, bevor sie öffentlich erscheinen."
+
+msgid "Plain language works best (who you support, what environment you offer)."
+msgstr "Am besten funktioniert klare, einfache Sprache (wen Sie unterstützen, welches Umfeld Sie anbieten)."
+
+msgid "Support levels offered"
+msgstr "Angebotene Unterstützungsstufen"
+
+msgid "Submit for review"
+msgstr "Zur Prüfung einreichen"
+
+msgid "Thanks — we received your submission."
+msgstr "Danke — wir haben Ihre Einreichung erhalten."
+
+msgid "We review new listings before they appear publicly."
+msgstr "Wir prüfen neue Einträge, bevor sie öffentlich erscheinen."
+
+msgid "Saved options"
+msgstr "Gespeicherte Angebote"
+
+msgid "Compare these options or open provider details."
+msgstr "Vergleichen Sie diese Angebote oder öffnen Sie die Anbieter-Details."
+
+msgid "Care level"
+msgstr "Betreuungsstufe"
+
+msgid "Cognitive support"
+msgstr "Kognitive Unterstützung"
+
+msgid "View provider details"
+msgstr "Anbieter-Details ansehen"
+
+msgid "No saved options yet."
+msgstr "Noch keine Angebote gespeichert."
+
+#~ msgid "All"
+#~ msgstr "Beliebig"
+
+#~ msgid "You may select multiple languages"
+#~ msgstr "Mehrere Sprachen können ausgewählt werden"
 
 #~ msgid "Assisted living"
 #~ msgstr "Begleitetes Wohnen"
@@ -158,68 +735,62 @@ msgstr "Weitere geeignete Optionen"
 #~ msgid "Independent living with regular on-site support."
 #~ msgstr "Selbstständiges Wohnen mit regelmäßiger Unterstützung vor Ort."
 
-msgid "Independent living"
-msgstr "Selbstständiges Wohnen"
+#~ msgid "Living independently with optional or occasional support."
+#~ msgstr ""
+#~ "Selbstständiges Wohnen mit optionaler oder gelegentlicher Unterstützung."
 
-msgid "Living independently with optional or occasional support."
-msgstr "Selbstständiges Wohnen mit optionaler oder gelegentlicher Unterstützung."
+#~ msgid "Age range"
+#~ msgstr "Altersbereich"
 
-msgid "Age range"
-msgstr "Altersbereich"
+#~ msgid "Age restrictions"
+#~ msgstr "Altersbeschränkungen"
 
-msgid "Age restrictions"
-msgstr "Altersbeschränkungen"
+#~ msgid "Suitable for"
+#~ msgstr "Geeignet für"
 
-msgid "Suitable for"
-msgstr "Geeignet für"
+#~ msgid "Infants"
+#~ msgstr "Säuglinge"
 
-msgid "Infants"
-msgstr "Säuglinge"
+#~ msgid "Toddlers"
+#~ msgstr "Kleinkinder"
 
-msgid "Toddlers"
-msgstr "Kleinkinder"
+#~ msgid "Children"
+#~ msgstr "Kinder"
 
-msgid "Children"
-msgstr "Kinder"
+#~ msgid "Teenagers"
+#~ msgstr "Jugendliche"
 
-msgid "Teenagers"
-msgstr "Jugendliche"
+#~ msgid "Adults"
+#~ msgstr "Erwachsene"
 
-msgid "Adults"
-msgstr "Erwachsene"
+#~ msgid "Seniors"
+#~ msgstr "Senior:innen"
 
-msgid "Seniors"
-msgstr "Senior:innen"
+#~ msgid "Minimum age"
+#~ msgstr "Mindestalter"
 
-msgid "Minimum age"
-msgstr "Mindestalter"
+#~ msgid "Maximum age"
+#~ msgstr "Höchstalter"
 
-msgid "Maximum age"
-msgstr "Höchstalter"
+#~ msgid "Supervision"
+#~ msgstr "Betreuung"
 
-msgid "Supervision"
-msgstr "Betreuung"
+#~ msgid "Regular check-ins"
+#~ msgstr "Regelmäßige Check-ins"
 
-msgid "On-site support"
-msgstr "Unterstützung vor Ort"
+#~ msgid "Daytime supervision"
+#~ msgstr "Betreuung tagsüber"
 
-msgid "Regular check-ins"
-msgstr "Regelmäßige Check-ins"
+#~ msgid "Evening and night supervision"
+#~ msgstr "Betreuung am Abend und in der Nacht"
 
-msgid "Daytime supervision"
-msgstr "Betreuung tagsüber"
+#~ msgid "Staff on-site 24/7"
+#~ msgstr "Personal 24/7 vor Ort"
 
-msgid "Evening and night supervision"
-msgstr "Betreuung am Abend und in der Nacht"
+#~ msgid "Not medical care"
+#~ msgstr "Keine medizinische Pflege"
 
-msgid "24/7 supervision"
-msgstr "24/7 Betreuung"
-
-msgid "Staff on-site 24/7"
-msgstr "Personal 24/7 vor Ort"
-
-msgid "Not medical care"
-msgstr "Keine medizinische Pflege"
-
-msgid "Supervision refers to guidance and safety support, not medical care."
-msgstr "Betreuung bedeutet Anleitung und Unterstützung zur Sicherheit, nicht medizinische Pflege."
+#~ msgid "Supervision refers to guidance and safety support, not medical care."
+#~ msgstr ""
+#~ "Betreuung bedeutet Anleitung und Unterstützung zur Sicherheit, nicht "
+#~ "medizinische Pflege."

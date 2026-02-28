@@ -1,0 +1,147 @@
+{% load i18n %}{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Add living option" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/livingoption_form.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <h1>{% trans "Add a living option" %}</h1>
+    <p class="sub">{% trans "Provider:" %} <strong>{{ provider.name }}</strong></p>
+
+    <form method="post" class="search-box" id="livingoption-form">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      <div class="search-grid">
+        <div class="search-description">
+          <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+          {{ form.title }}
+          {{ form.title.errors }}
+          <small class="hint">{% trans "This title will be used for each language you provide below." %}</small>
+        </div>
+
+        <!-- Language tabs + disabled checkboxes -->
+        <div class="lang-block">
+          <div class="lang-tabs" role="tablist" aria-label="{% trans 'Description language' %}">
+            <button type="button" class="lang-tab active" data-lang="de" role="tab" aria-selected="true">
+              DE
+            </button>
+            <button type="button" class="lang-tab" data-lang="fr" role="tab" aria-selected="false">
+              FR
+            </button>
+            <button type="button" class="lang-tab" data-lang="it" role="tab" aria-selected="false">
+              IT
+            </button>
+            <button type="button" class="lang-tab" data-lang="en" role="tab" aria-selected="false">
+              EN
+            </button>
+          </div>
+
+          <div class="lang-checkbox-row" aria-label="{% trans 'Languages included' %}">
+            <label class="lang-check">
+              <input type="checkbox" id="lang_check_de" disabled>
+              {% trans "German included" %}
+            </label>
+            <label class="lang-check">
+              <input type="checkbox" id="lang_check_fr" disabled>
+              {% trans "French included" %}
+            </label>
+            <label class="lang-check">
+              <input type="checkbox" id="lang_check_it" disabled>
+              {% trans "Italian included" %}
+            </label>
+            <label class="lang-check">
+              <input type="checkbox" id="lang_check_en" disabled>
+              {% trans "English included" %}
+            </label>
+          </div>
+
+          <small class="hint">
+            {% trans "A language is included only if its description is filled in." %}
+          </small>
+        </div>
+
+        <!-- Stacked description panes -->
+        <div class="search-description">
+          <label>{% trans "Description" %}</label>
+
+          <div class="lang-panes">
+            <div class="lang-pane show" data-lang="de">
+              {{ form.description_de }}
+              {{ form.description_de.errors }}
+            </div>
+
+            <div class="lang-pane" data-lang="fr">
+              {{ form.description_fr }}
+              {{ form.description_fr.errors }}
+            </div>
+
+            <div class="lang-pane" data-lang="it">
+              {{ form.description_it }}
+              {{ form.description_it.errors }}
+            </div>
+
+            <div class="lang-pane" data-lang="en">
+              {{ form.description_en }}
+              {{ form.description_en.errors }}
+            </div>
+          </div>
+
+          <small class="hint">
+            {% trans "Write plain, specific descriptions. Avoid medical claims." %}
+          </small>
+        </div>
+
+        <div>
+          <label for="{{ form.care_level.id_for_label }}">{{ form.care_level.label }}</label>
+          {{ form.care_level }}
+          <small class="hint">{% trans "1 = minimal, 5 = 24/7 care" %}</small>
+          {{ form.care_level.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.cognitive_support_level.id_for_label }}">{{ form.cognitive_support_level.label }}</label>
+          {{ form.cognitive_support_level }}
+          {{ form.cognitive_support_level.errors }}
+        </div>
+
+        <div>
+          <label style="font-weight:700;">{{ form.wheelchair_accessible }} {% trans "Wheelchair accessible" %}</label>
+          <label style="font-weight:700;">{{ form.hearing_support }} {% trans "Hearing support" %}</label>
+          <label style="font-weight:700;">{{ form.visual_support }} {% trans "Visual support" %}</label>
+        </div>
+
+        <div>
+          <label for="{{ form.min_age.id_for_label }}">{{ form.min_age.label }}</label>
+          {{ form.min_age }}
+          {{ form.min_age.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.max_age.id_for_label }}">{{ form.max_age.label }}</label>
+          {{ form.max_age }}
+          {{ form.max_age.errors }}
+        </div>
+
+
+
+        <div>
+          <button type="submit">{% trans "Create option" %}</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="{% static 'bern/js/nav_drawer.js' %}?v=8"></script>
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/livingoption_lang_tabs.js' %}?v=1"></script>
+</body>
+</html>

@@ -1,6 +1,15 @@
 {% load i18n %}
 <nav class="navbar">
   <div class="nav-left">
+    <button
+      class="menu-btn"
+      aria-label="{% trans 'Open menu' %}"
+      aria-controls="nav-drawer"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
     <span class="brand">{% trans "Living Options" %}</span>
   </div>
 
@@ -12,7 +21,7 @@
     >
       {% for code, label in LANGUAGES %}
         {% if code == ui_lang %}
-          <button type="button" class="lang-btn active">
+          <button type="button" class="lang-btn active" data-lang="{{ code }}">
             {{ label }}
           </button>
         {% else %}
@@ -28,3 +37,28 @@
     </form>
   </div>
 </nav>
+
+<!-- Backdrop -->
+<div id="nav-backdrop" class="nav-backdrop" hidden></div>
+
+<!-- Drawer -->
+<aside id="nav-drawer" class="nav-drawer" aria-hidden="true">
+  <nav class="drawer-nav">
+    <a href="{% url 'livingoption_search' %}">{% trans "Search" %}</a>
+    <a href="{% url 'livingoption_search' %}">{% trans "About" %}</a>
+    <a href="{% url 'how_it_works' %}">{% trans "How it works" %}</a>
+    <a href="{% url 'livingoption_search' %}">{% trans "Contact" %}</a>
+    <a href="{% url 'saved_list' %}" id="saved-link">
+      {% trans "Saved" %} (<span id="saved-count">0</span>)
+    </a>
+    <div class="drawer-section">
+      <div class="drawer-section-title">{% trans "For providers" %}</div>
+      <a class="drawer-link" href="{% url 'provider_register' %}">
+        {% trans "Add your organization" %}
+      </a>
+      <a class="drawer-link" href="{% url 'provider_manage_search' %}">
+        {% trans "Manage a listing" %}
+      </a>
+    </div>
+  </nav>
+</aside>

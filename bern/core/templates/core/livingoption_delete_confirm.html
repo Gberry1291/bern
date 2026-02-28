@@ -1,0 +1,51 @@
+{% load i18n %}{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Delete living option" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <a class="back-link" href="{% url 'livingoption_edit' option.id %}">← {% trans "Back to edit" %}</a>
+
+    <h1>{% trans "Delete living option" %}</h1>
+    <p class="sub">
+      {% trans "Provider:" %} <strong>{{ provider.name }}</strong>
+    </p>
+
+    <div class="search-box">
+      <p style="margin-top:0;">
+        {% trans "Are you sure you want to delete this living option?" %}
+      </p>
+
+      <div class="card" style="margin:1rem 0;">
+        <h3 style="margin-top:0;">{{ option }}</h3>
+        <p class="hint">{{ option.safe_translation_getter:"description"|truncatechars:220 }}</p>
+      </div>
+
+      <form method="post" style="display:flex; gap:.75rem; flex-wrap:wrap;">
+        {% csrf_token %}
+        <button type="submit" style="background:#b91c1c; border-color:#b91c1c;">
+          {% trans "Yes, delete" %}
+        </button>
+
+        <a class="btn btn-ghost" href="{% url 'livingoption_edit' option.id %}">
+          {% trans "Cancel" %}
+        </a>
+      </form>
+
+      <p class="hint" style="margin-top:1rem;">
+        {% trans "This action cannot be undone." %}
+      </p>
+    </div>
+  </main>
+
+  <script src="{% static 'bern/js/nav_drawer.js' %}?v=9"></script>
+</body>
+</html>

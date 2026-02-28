@@ -1,0 +1,71 @@
+{% load i18n %}
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Saved options" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+</head>
+<body class="saved-page">
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <h1>{% trans "Saved options" %}</h1>
+    <p class="sub">{% trans "Compare these options or open provider details." %}</p>
+
+    {% if options %}
+      <div class="results">
+        {% for opt in options %}
+          <div class="card">
+            <h3>{{ opt.title }}</h3>
+            <p>{{ opt.description|truncatechars:240 }}</p>
+
+            <p class="hint" style="margin-top:.5rem;">
+              {{ _("Care level") }}: {{ opt.care_level }} •
+              {{ _("Cognitive support") }}: {{ opt.get_cognitive_support_level_display }}
+            </p>
+
+            <div class="badges">
+              {% if opt.wheelchair_accessible %}
+                <span class="badge good">{{ _("Wheelchair accessible") }}</span>
+              {% endif %}
+              {% if opt.hearing_support %}
+                <span class="badge good">{{ _("Hearing support") }}</span>
+              {% endif %}
+              {% if opt.visual_support %}
+                <span class="badge good">{{ _("Visual support") }}</span>
+              {% endif %}
+            </div>
+
+            <div class="card-actions">
+
+              <button
+                type="button"
+                class="btn btn-ghost save-btn is-saved"
+                data-option-id="{{ opt.id }}"
+                aria-pressed="true"
+              >
+                {{ _("Saved") }}
+              </button>
+
+              <a class="btn btn-primary" href="{% url 'provider_detail' opt.provider_id %}">
+                {{ _("View provider details") }}
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="hint">{% trans "No saved options yet." %}</p>
+      <a class="btn btn-primary" href="{% url 'livingoption_search' %}">{% trans "Back to search" %}</a>
+    {% endif %}
+  </main>
+
+  <script src="{% static 'bern/js/saved.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}"></script>
+</body>
+</html>

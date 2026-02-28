@@ -1,0 +1,24 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% trans "How it works" %}</title>
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/how_it_works.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how our AI-powered housing search combines structured accessibility filters with semantic understanding to help families find appropriate support options safely and efficiently.">
+</head>
+<body>
+
+  {% include "core/nav.html" %}
+
+  <div id="page-container">
+    {% include "core/how_partial.html" %}
+  </div>
+
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}"></script>
+
+</body>
+</html>

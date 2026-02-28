@@ -1,0 +1,14 @@
+{% load i18n %}{% load static %}
+<!doctype html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+<title>{% trans "Submitted" %}</title>
+</head><body>
+{% include "core/nav.html" %}
+<main class="container">
+  <h1>{% trans "Thanks — your updates were submitted." %}</h1>
+  <p class="sub">{% trans "We’ll review changes before they appear publicly." %}</p>
+  <a class="btn btn-primary" href="{% url 'livingoption_search' %}">{% trans "Back to search" %}</a>
+</main>
+</body></html>

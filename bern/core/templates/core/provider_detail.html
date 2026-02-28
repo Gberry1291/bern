@@ -1,0 +1,158 @@
+{% load i18n %}
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{{ provider.name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/provider.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="provider container">
+    <a class="back-link" href="{% url 'livingoption_search' %}">← {% trans "Back to search" %}</a>
+
+    <header class="provider-hero">
+      <div class="provider-hero-top">
+        <h1 class="provider-title">{{ provider.name }}</h1>
+
+        <div class="provider-badges">
+          {% if provider.verified %}
+            <span class="badge badge-good">{% trans "Reviewed" %}</span>
+          {% else %}
+            <span class="badge">{% trans "Not reviewed yet" %}</span>
+          {% endif %}
+
+          {% if provider.updated_at %}
+            <span class="meta">{% trans "Updated" %}: {{ provider.updated_at|date:"F Y" }}</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <p class="provider-location">
+        <strong>{% trans "Canton" %}:</strong> {{ provider.canton }}
+      </p>
+    </header>
+
+    <!-- Key facts -->
+    <section class="provider-grid">
+      <div class="panel">
+        <h2>{% trans "At a glance" %}</h2>
+
+        <dl class="facts">
+          <div>
+            <dt>{% trans "Support level" %}</dt>
+            <dd>
+              {% if support_levels %}
+                {{ support_levels|join:", " }}
+              {% else %}
+                <span class="muted">{% trans "Not specified" %}</span>
+              {% endif %}
+            </dd>
+          </div>
+
+          <div>
+            <dt>{% trans "Wheelchair accessible" %}</dt>
+            <dd>
+              {% if provider.wheelchair_accessible %}
+                {% trans "Yes" %}
+              {% else %}
+                <span class="muted">{% trans "Not specified" %}</span>
+              {% endif %}
+            </dd>
+          </div>
+
+          <div>
+            <dt>{% trans "Languages" %}</dt>
+            <dd>
+              {% if provider.supported_languages %}
+                <div class="pill-row">
+                  {% for code in provider.supported_languages %}
+                    <span class="pill">{{ code|upper }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <span class="muted">{% trans "Not specified" %}</span>
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Description -->
+      <div class="panel">
+        <h2>{% trans "About this provider" %}</h2>
+        {% if provider.short_description %}
+          <p class="provider-desc">{{ provider.short_description|linebreaksbr }}</p>
+        {% else %}
+          <p class="muted">{% trans "No description provided yet." %}</p>
+        {% endif %}
+
+        <div class="note">
+          {% trans "Tip: When contacting a provider, you can ask about availability, pricing, and whether they can support specific needs." %}
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="panel panel-contact">
+        <h2>{% trans "Contact" %}</h2>
+
+        <div class="contact-actions">
+          {% if provider.contact_phone %}
+            <a class="btn btn-primary" href="tel:{{ provider.contact_phone|urlencode }}">
+              {% trans "Call" %}
+            </a>
+          {% endif %}
+
+          {% if provider.contact_email %}
+            <a class="btn" href="mailto:{{ provider.contact_email|urlencode }}">
+              {% trans "Email" %}
+            </a>
+          {% endif %}
+
+          {% if provider.website_url %}
+            <a class="btn" href="{{ provider.website_url }}" target="_blank" rel="noopener">
+              {% trans "Website" %}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if not provider.contact_phone and not provider.contact_email and not provider.website_url %}
+          <p class="muted">{% trans "No contact details available yet." %}</p>
+        {% endif %}
+
+        <!-- Optional placeholder for Save (we'll wire later) -->
+        <button type="button" class="btn btn-ghost" id="save-provider" data-provider-id="{{ provider.id }}">
+          {% trans "Save to compare" %}
+        </button>
+
+        <p class="fineprint">
+          {% trans "Contacting a provider does not commit you to anything." %}
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}"></script>
+  <script>
+    // Optional: simple local save placeholder (wire properly later)
+    const btn = document.getElementById("save-provider");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.providerId;
+        const key = "saved_providers";
+        const saved = new Set(JSON.parse(localStorage.getItem(key) || "[]"));
+        saved.add(String(id));
+        localStorage.setItem(key, JSON.stringify([...saved]));
+        btn.textContent = "{{ _('Saved') }}";
+      });
+    }
+  </script>
+</body>
+</html>

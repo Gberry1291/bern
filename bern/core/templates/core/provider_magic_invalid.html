@@ -1,0 +1,18 @@
+{% load i18n %}{% load static %}
+<!doctype html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+<title>{% trans "Link expired" %}</title>
+</head><body>
+{% include "core/nav.html" %}
+<main class="container">
+  <h1>{% trans "This link is no longer valid." %}</h1>
+  <p class="sub">{% trans "Please request a new access link from the Manage a listing page." %}</p>
+  <a class="btn btn-primary" href="{% url 'provider_manage_search' %}">{% trans "Manage a listing" %}</a>
+</main>
+
+<script src="{% static 'bern/js/nav_drawer.js' %}?v=6"></script>
+<script src="{% static 'bern/js/language_switcher.js' %}?v=1"></script>
+
+</body></html>

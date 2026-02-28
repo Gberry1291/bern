@@ -2,6 +2,9 @@
 <div class="container">
   <header>
     <h1>{{ _("Find a living arrangement") }}</h1>
+    <p class="audience-line">
+      {{ _("This tool can be used by individuals, family members, or professionals.") }}
+    </p>
     <p class="sub">{{ _("Describe needs and preferences; we’ll rank suitable options.") }}</p>
   </header>
 
@@ -9,13 +12,31 @@
 <form class="search" method="get">
   <div class="search-grid">
     <div class="search-description">
-      <label for="q">{{ _("Describe your needs") }}</label>
+      <label for="q">{{ _("Describe your needs in your own words") }}</label>
+      <div class="examples">
+        <p class="examples-title">{{ _("Example searches:") }}</p>
+
+        <button type="button" class="example-chip">
+          {{ _("Wheelchair-accessible living near Bern, German-speaking staff") }}
+        </button>
+
+        <button type="button" class="example-chip">
+          {{ _("Quiet assisted living with a memory-friendly environment") }}
+        </button>
+
+        <button type="button" class="example-chip">
+          {{ _("High support needs, multilingual staff, budget under CHF 6’000") }}
+        </button>
+      </div>
       <textarea
         id="q"
         name="q"
         placeholder="{{ _('Describe your needs') }}"
         rows="1"
       >{{ query }}</textarea>
+      <small class="hint">
+        {{ _("Include accessibility needs, preferred language, location, or support level.") }}
+      </small>
     </div>
 
     <div>
@@ -32,10 +53,9 @@
     </div>
 
     <div>
-      <label for="language">{{ _("Language") }}</label>
       <fieldset class="lang-checkboxes">
         <legend>{{ _("Language") }}</legend>
-      
+
         <label>
           <input type="checkbox" name="language" value="de"
             {% if language_filter and "de" in language_filter %}checked{% endif %}>
@@ -64,26 +84,38 @@
           {% trans "Select one or more languages" %}
         </small>
       </fieldset>
-      <small class="hint">{{ _("You may select multiple languages") }}</small>
+    </div>
+
+    <div class="check">
+      <input id="wheelchair" type="checkbox" name="wheelchair" value="true">
+      <label for="wheelchair" style="margin:0;">
+        {% trans "Wheelchair accessible only" %}
+      </label>
+      <small class="hint">
+        {% trans "Step-free access and wheelchair-usable spaces." %}
+      </small>
+    </div>
+
+    <div>
+      <label for="age">{% trans "Age (optional)" %}</label>
+      <input id="age" name="age" type="number" min="0" max="120" value="{{ request.GET.age }}">
+      <small class="hint">{% trans "Used to filter programs with age ranges (e.g., 18–25, 50+)." %}</small>
     </div>
 
     <div>
       <label>&nbsp;</label>
-      <button type="submit">{{ _("Search") }}</button>
+      <button type="submit">{{ _("Show matching options") }}</button>
     </div>
   </div>
 
-  <div class="check">
-    <input id="wheelchair" type="checkbox" name="wheelchair" value="true">
-    <label for="wheelchair" style="margin:0;">
-      {% trans "Wheelchair accessible only" %}
-    </label>
-    <small class="hint">
-      {% trans "Step-free access and wheelchair-usable spaces." %}
-    </small>
-  </div>
 </form>
 </div>
+
+<ul class="trust-list">
+  <li>{{ _("No account required") }}</li>
+  <li>{{ _("Free and independent") }}</li>
+  <li>{{ _("Does not replace medical or social-care advice") }}</li>
+</ul>
 
   <hr>
 

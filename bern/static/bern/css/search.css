@@ -1,188 +1,398 @@
-/* core/static/core/search.css */
-/* ---------- Base ---------- */
-* {
-  box-sizing: border-box;
+/* core/static/bern/css/search.css
+   Clean, mobile-first, matches your templates:
+   .container, header, .sub, .search-box, form.search, .search-grid,
+   .search-description textarea, #care_target, fieldset.lang-checkboxes, .check,
+   .results, .card, .badges, .badge
+*/
+
+/* ---------- Reset / Base ---------- */
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #f7f8fa;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #ffffff;
+
+  --border: 1px solid rgba(0,0,0,.14);
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
+
+  --radius: 0.85rem;
+  --gap: 1rem;
+
+  --maxw: 64rem;
+
+  --primary: #2563eb;
+  --primary-hover: #1e4fd4;
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, sans-serif;
-  background: #f7f8fa;
-  color: #1f2937;
+/* Readable default size for accessibility */
+html { font-size: 18px; }
+
+body{
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
 }
+
+img, iframe { max-width: 100%; height: auto; }
 
 /* ---------- Layout ---------- */
-.container {
-  max-width: 1100px;
+.container{
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px 20px 48px;
+  padding: 1rem;
 }
 
-header {
+/* Header */
+header{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+  margin: 0 0 1rem 0;
 }
 
-h1 {
-  font-size: 1.6rem;
-  font-weight: 650;
+header h1{
   margin: 0;
-}
-.search-description {
-  grid-column: 1 / -1; /* full row */
-}
-
-.search-description textarea {
-  width: 100%;
-  resize: none;
-  overflow: hidden;
-  min-height: 44px;
-  line-height: 1.4;
+  font-size: 1.6rem;
+  font-weight: 750;
+  line-height: 1.2;
 }
 
-/* ---------- Language selector ---------- */
-.lang-select select {
-  padding: 6px 8px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
-  background: white;
-  font-size: 0.9rem;
+header .sub{
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(31,41,55,.85);
 }
 
-/* ---------- Search box ---------- */
-.search-box {
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  margin-bottom: 28px;
+/* ---------- Form Card ---------- */
+.search-box{
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-.search-grid {
+form.search{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Search grid: stack by default (mobile-first) */
+.search-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  row-gap: 1.25rem;
 }
 
-.search-grid label {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-bottom: 4px;
+/* Labels / hints */
+label{
   display: block;
+  font-weight: 700;
+  margin: 0 0 .35rem 0;
 }
 
-.search-grid input,
-.search-grid select {
+small.hint,
+.hint{
+  display: block;
+  margin-top: .35rem;
+  font-size: .95rem;
+  color: rgba(31,41,55,.75);
+}
+
+/* Inputs */
+textarea,
+select,
+input[type="text"],
+input[type="search"]{
   width: 100%;
-  padding: 9px 10px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 0.9rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: .75rem;
+  font-size: 1rem;
+  background: #fff;
 }
 
-.search-grid button {
-  margin-top: 20px;
-  padding: 10px 16px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 10px;
+/* Description textarea: allow comfortable typing */
+.search-description{
+  grid-column: 1 / -1;
+}
+.search-description textarea{
+  min-height: 3.25rem;
+  line-height: 1.4;
+  resize: vertical;
+  background: #fff;
+  border: 2px solid rgba(37, 99, 235, 0.35); /* subtle blue */
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  padding: 1rem;
+  margin-top: .25rem;
+  margin-bottom: 1.25rem; /* separation from next elements */
+}
+.search-description textarea:focus{
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+.examples{
+  margin-bottom: 1.25rem; /* space before textarea */
+}
+.examples-title{
+  margin-bottom: .5rem;
   font-weight: 600;
+  color: rgba(31,41,55,.75);
+}
+.example-chip{
+  margin: .25rem .35rem .35rem 0;
+  padding: .45rem .75rem;
+  font-size: .95rem;
+}
+/* Care target select: bigger tap targets */
+#care_target{
+  min-height: 11rem;
+}
+
+/* Submit button */
+button{
+  font: inherit;
   cursor: pointer;
 }
 
-.search-grid button:hover {
-  background: #1e4fd4;
+button[type="submit"]{
+  width: 100%;
+  min-height: 48px;
+  border-radius: var(--radius);
+  border: 0;
+  padding: .9rem 1rem;
+  font-weight: 750;
+  background: var(--primary);
+  color: #fff;
+  margin-top: 1.25rem;
+}
+
+button[type="submit"]:hover{
+  background: var(--primary-hover);
+}
+
+/* ---------- Language checkboxes ---------- */
+fieldset.lang-checkboxes{
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: .75rem;
+  margin: 0;
+}
+
+fieldset.lang-checkboxes legend{
+  font-weight: 800;
+  padding: 0 .4rem;
+}
+
+fieldset.lang-checkboxes label{
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .65rem .6rem;
+  border-radius: .75rem;
+  border: 1px solid rgba(0,0,0,.10);
+  margin: .5rem 0 0 0;
+}
+
+fieldset.lang-checkboxes input[type="checkbox"]{
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+/* ---------- Wheelchair row ---------- */
+.check{
+  margin-top: .25rem;
+  padding-top: .75rem;
+  border-top: var(--border);
+}
+
+.check input[type="checkbox"]{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.check label{
+  display: inline;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- Divider ---------- */
+hr{
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin: 1rem 0;
 }
 
 /* ---------- Results ---------- */
-.results {
+.results{
   display: grid;
-  gap: 16px;
+  gap: 1rem;
 }
 
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+.card{
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,.05);
+  padding: 1rem;
 }
 
-.card.best {
+.card.best{
   border-left: 5px solid #16a34a;
 }
 
-.card h3 {
-  margin: 0 0 8px;
+.card h3{
+  margin: 0 0 .5rem 0;
   font-size: 1.1rem;
 }
 
-.card p {
-  margin: 0 0 12px;
-  color: #374151;
-  line-height: 1.5;
+.card p{
+  margin: 0 0 .75rem 0;
+  color: rgba(31,41,55,.9);
+}
+.match-explainer{
+  margin: .75rem 0 0 0;
+  font-size: .95rem;
+  color: rgba(31,41,55,.78);
+  line-height: 1.45;
 }
 
-/* ---------- Badges ---------- */
-.badges {
+.match-explainer strong{
+  color: rgba(31,41,55,.9);
+}
+/* Badges */
+.badges{
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: .5rem;
 }
 
-.badge {
-  font-size: 0.7rem;
-  padding: 4px 8px;
+.badge{
+  font-size: .85rem;
+  padding: .25rem .55rem;
   border-radius: 999px;
   background: #e5e7eb;
   color: #374151;
 }
 
-.badge.good {
+.badge.good{
   background: #dcfce7;
   color: #166534;
 }
-
-
-.lang-checkboxes {
+/* Card actions */
+.card-actions{
+  margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  border: none;
-  padding: 0;
-  margin: 0;
+  justify-content: flex-end;
 }
 
-.lang-checkboxes legend {
-  width: 100%;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.lang-checkboxes label {
+/* Reuse the button look from provider.css, but keep it lightweight here */
+.card-actions .btn{
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-  cursor: pointer;
+  justify-content: center;
+  min-height: 44px;
+  padding: .65rem .9rem;
+  border-radius: .85rem;
+  border: 1px solid rgba(0,0,0,.18);
+  background: #fff;
+  color: #1f2937;
+  font-weight: 800;
+  text-decoration: none;
+}
+.card-actions .btn-primary{
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
 }
 
-.lang-checkboxes input[type="checkbox"] {
-  margin: 0;
-  accent-color: var(--accent, #3b82f6);
+.card-actions .btn-primary:hover{
+  background: #1e4fd4;
+  border-color: #1e4fd4;
 }
-.check{
-  margin-top: 3%;
+.card-actions .btn-ghost{
+  background: transparent;
 }
-.lang-checkboxes label {
-  padding: 4px 8px;
-  border-radius: 6px;
+.card-actions .btn-ghost:hover{
+  background: rgba(0,0,0,.04);
+}
+/* Saved state styling */
+.card-actions .save-btn.is-saved{
+  border-color: rgba(37,99,235,.45);
 }
 
-.lang-checkboxes input[type="checkbox"]:checked + span {
-  background: rgba(59, 130, 246, 0.1);
+.edit-actions{
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible{
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* ---------- livingoption_create ---------- */
+.manage-actions{
+  margin: .75rem 0 1rem 0;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------- Tablet+ ---------- */
+@media (min-width: 768px){
+  .container{ padding: 1.5rem; }
+  .search-box{ padding: 1.25rem; }
+
+  /* Two columns: left = description, right = controls */
+  .search-grid{
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+
+  button[type="submit"]{
+    width: auto;
+    min-width: 10rem;
+    justify-self: start;
+  }
+
+  /* Results grid on larger screens */
+  .results{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* ---------- Desktop+ ---------- */
+@media (min-width: 1200px){
+  .results{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px){
+  button[type="submit"]{
+    margin-top: 1.5rem;
+  }
+  .card-actions{
+    justify-content: stretch;
+  }
+  .card-actions .btn{
+    width: 100%;
+  }
 }

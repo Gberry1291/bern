@@ -6,17 +6,23 @@
       <div class="card {% if r.tier == 'best' %}best{% endif %}"
       data-option-id="{{ r.option.id }}"
       data-rank="{{ r.rank }}">
-        <h3>{{ r.option }}</h3>
-
-        <p>{{ r.option.description }}</p>
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.description }}</p>
 
         <div class="badges">
-          {% for reason in r.reasons %}
-            <span class="badge {% if 'Matches' in reason or 'Close' in reason %}good{% endif %}">
-              {{ reason }}
-            </span>
-          {% endfor %}
+          {% if r.reasons %}
+            <p class="match-explainer">
+              <strong>{{ _("Why this matches:") }}</strong>
+            </p>
+            {% for reason in r.reasons %}
+              <span class="badge {% if 'Matches' in reason or 'Close' in reason %}good{% endif %}">
+                {{ reason }}
+              </span>
+            {% endfor %}
+          {% endif %}
         </div>
+
+
         {% if request.GET.debug == "1" %}
           <div class="badges" style="margin-top:8px;">
             <span class="badge">{{ _("score") }} {{ r.score|floatformat:3 }}</span>
@@ -24,6 +30,22 @@
             <span class="badge">{{ _("tier") }} {{ r.tier }}</span>
           </div>
         {% endif %}
+        <div class="card-actions">
+          <button
+            type="button"
+            class="btn btn-ghost save-btn"
+            data-option-id="{{ r.option.id }}"
+            data-provider-id="{{ r.option.provider_id }}"
+            aria-pressed="false"
+          >
+            {{ _("Save") }}
+          </button>
+
+          <a class="btn btn-primary"
+             href="{% url 'provider_detail' r.option.provider_id %}">
+            {{ _("View details") }}
+          </a>
+        </div>
       </div>
     {% endfor %}
   </div>

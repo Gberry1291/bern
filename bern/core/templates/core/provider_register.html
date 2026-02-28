@@ -1,0 +1,96 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Add your organization" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <h1>{% trans "Add your organization" %}</h1>
+    <p class="sub">
+      {% trans "Submit your details. We review new listings before they appear publicly." %}
+    </p>
+
+    <form method="post" class="search-box">
+      {% csrf_token %}
+
+      <!-- honeypot -->
+      <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+        <label for="id_website">Website</label>
+        {{ form.website }}
+      </div>
+
+      {{ form.non_field_errors }}
+
+      <div class="search-grid">
+        <div>
+          <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.canton.id_for_label }}">{{ form.canton.label }}</label>
+          {{ form.canton }}
+          {{ form.canton.errors }}
+        </div>
+
+        <div class="search-description">
+          <label for="{{ form.short_description.id_for_label }}">{{ form.short_description.label }}</label>
+          {{ form.short_description }}
+          <small class="hint">{% trans "Plain language works best (who you support, what environment you offer)." %}</small>
+          {{ form.short_description.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.contact_email.id_for_label }}">{{ form.contact_email.label }}</label>
+          {{ form.contact_email }}
+          {{ form.contact_email.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.contact_phone.id_for_label }}">{{ form.contact_phone.label }}</label>
+          {{ form.contact_phone }}
+          {{ form.contact_phone.errors }}
+        </div>
+
+        <div>
+          <label for="{{ form.website_url.id_for_label }}">{{ form.website_url.label }}</label>
+          {{ form.website_url }}
+          {{ form.website_url.errors }}
+        </div>
+
+        <div>
+          <label>{{ _("Support levels offered") }}</label>
+          <div class="badges">
+            <label style="font-weight:600;"><span>{{ form.support_level_low }}</span> {{ _("Low") }}</label>
+            <label style="font-weight:600;"><span>{{ form.support_level_medium }}</span> {{ _("Medium") }}</label>
+            <label style="font-weight:600;"><span>{{ form.support_level_high }}</span> {{ _("High") }}</label>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-weight:700;">
+            {{ form.wheelchair_accessible }} {{ _("Wheelchair accessible") }}
+          </label>
+          <small class="hint">{% trans "Step-free access and wheelchair-usable spaces." %}</small>
+        </div>
+
+        <div>
+          <button type="submit">{{ _("Submit for review") }}</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}?v=3"></script>
+</body>
+</html>

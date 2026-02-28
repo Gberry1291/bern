@@ -144,6 +144,18 @@ USE_I18N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kuchtagary1@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+DEFAULT_FROM_EMAIL = "Living Options <kuchtagary1@gmail.com>"
+PROVIDER_NOTIFICATION_EMAIL = "kuchtagary1@gmail.com"
+
+SITE_URL = os.environ.get("SITE_URL", "http://127.0.0.1:8000").rstrip("/")
+PROVIDER_NOTIFICATION_EMAIL = os.environ.get("PROVIDER_NOTIFICATION_EMAIL", "")
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "Living Options <no-reply@example.com>")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/

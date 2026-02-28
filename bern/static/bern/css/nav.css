@@ -1,46 +1,210 @@
-/* nav.css */
+/* core/static/bern/css/nav.css
+   Clean, mobile-first, matches nav.html:
+   .navbar, .nav-left .brand, .nav-right, form.lang-form, .lang-btn
+*/
 
-.navbar {
+:root{
+  --nav-bg: #fff;
+  --nav-border: 1px solid rgba(0,0,0,.12);
+
+  --text: #1f2937;
+
+  --primary: #2563eb;
+  --primary-hover: #1e4fd4;
+
+  --btn-border: 1px solid rgba(0,0,0,.18);
+  --radius: 0.85rem;
+}
+
+/* ---------- Navbar ---------- */
+.navbar{
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  border-bottom: 1px solid #e0e0e0;
-  background: #fff;
+  gap: .75rem;
+
+  padding: .75rem 1rem;
+  background: var(--nav-bg);
+  border-bottom: var(--nav-border);
+
+  color: var(--text);
 }
 
-.nav-left .brand {
-  font-weight: 600;
-  font-size: 1.1rem;
+.nav-left .brand{
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
 }
 
-.nav-right {
+.nav-right{
   display: flex;
   align-items: center;
 }
 
-.lang-form {
+/* ---------- Language buttons ---------- */
+.lang-form{
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: flex-end;
+  margin: 0;
 }
 
-.lang-btn {
-  border: 1px solid #ccc;
+.lang-btn{
+  appearance: none;
+  border: var(--btn-border);
   background: transparent;
-  padding: 6px 10px;
-  border-radius: 6px;
+
+  padding: .55rem .85rem;
+  border-radius: var(--radius);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  min-height: 44px; /* touch target */
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .05s ease;
 }
 
-.lang-btn:hover {
-  background: #f2f2f2;
+.lang-btn:hover{
+  background: rgba(0,0,0,.04);
 }
 
-.lang-btn.active {
-  background: #2563eb;      /* blue highlight */
+.lang-btn:active{
+  transform: translateY(1px);
+}
+
+.lang-btn.active{
+  background: var(--primary);
   color: #fff;
-  border-color: #2563eb;
+  border-color: var(--primary);
   cursor: default;
+  transform: none;
+}
+
+/* Focus visibility for keyboard users */
+.lang-btn:focus-visible{
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* ---------- Very small screens ---------- */
+@media (max-width: 420px){
+  .navbar{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lang-form{
+    justify-content: flex-start;
+  }
+
+  .lang-btn{
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+/* ---------- Tablet+ ---------- */
+@media (min-width: 768px){
+  .navbar{
+    padding: .85rem 1.5rem;
+  }
+}
+
+/* ---------- Menu button ---------- */
+.menu-btn{
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  min-height: 44px;
+}
+
+.menu-btn:focus-visible{
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* ---------- Backdrop ---------- */
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 90;
+}
+
+/* ---------- Drawer ---------- */
+.nav-drawer{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: min(85vw, 320px);
+
+  background: #fff;
+  border-right: 1px solid rgba(0,0,0,.12);
+
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  z-index: 100;
+
+  padding: 1rem;
+}
+
+.nav-drawer.open{
+  transform: translateX(0);
+}
+
+.drawer-nav{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.drawer-nav a{
+  display: block;
+  padding: .75rem .75rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.drawer-nav a:hover{
+  background: rgba(0,0,0,.05);
+}
+
+.drawer-section{
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.drawer-section-title{
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: rgba(31,41,55,.6);
+  margin-bottom: .5rem;
+}
+
+.drawer-link{
+  display: block;
+  padding: .75rem .75rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  font-weight: 750;
+  color: #1f2937;
+}
+
+.drawer-link:hover{
+  background: rgba(0,0,0,.05);
 }

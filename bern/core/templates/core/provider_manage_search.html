@@ -1,0 +1,69 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans "Manage a listing" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'bern/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'bern/css/search.css' %}">
+</head>
+<body>
+  {% include "core/nav.html" %}
+
+  <main class="container">
+    <h1>{% trans "Manage a listing" %}</h1>
+    <p class="sub">{% trans "Search for your organization, then request access to update details." %}</p>
+
+    <div class="search-box">
+      <form method="get" class="search">
+        <div class="search-grid">
+          <div class="search-description">
+            <label for="q">{% trans "Organization name" %}</label>
+            <input id="q" name="q" type="text" value="{{ q }}" placeholder="{% trans 'e.g. Sonnenhof' %}">
+          </div>
+
+          <div>
+            <label for="canton">{% trans "Canton (optional)" %}</label>
+            <input id="canton" name="canton" type="text" value="{{ canton }}" placeholder="{% trans 'e.g. Bern' %}">
+            <small class="hint">{% trans "Helps narrow results if names are similar." %}</small>
+          </div>
+
+          <div>
+            <label>&nbsp;</label>
+            <button type="submit">{% trans "Search" %}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    {% if q or canton %}
+      {% if providers %}
+        <h2 style="margin-top:1rem;">{% trans "Select your organization" %}</h2>
+        <div class="results">
+          {% for p in providers %}
+            <div class="card">
+              <h3>{{ p.name }}</h3>
+              <p class="hint">{% trans "Canton" %}: {{ p.canton }}</p>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="{% url 'provider_manage_request' p.id %}">
+                  {% trans "Request access" %}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="hint" style="margin-top:1rem;">
+          {% trans "No matching organizations found." %}
+          <a href="{% url 'provider_register' %}">{% trans "Add your organization instead." %}</a>
+        </p>
+      {% endif %}
+    {% endif %}
+  </main>
+
+  <script src="{% static 'bern/js/language_switcher.js' %}"></script>
+  <script src="{% static 'bern/js/nav_drawer.js' %}?v=4"></script>
+</body>
+</html>
